@@ -17,7 +17,9 @@ local <%= node["openvpn"]["local"] %>
 <%= route %>
 <% end -%>
 <% end -%>
+<% if node['openvpn']['script_security'] >= 2 %>
 up /etc/openvpn/server.up.sh
+<% end %>
 
 # Keys and certificates.
 ca   /etc/openvpn/keys/ca.crt
